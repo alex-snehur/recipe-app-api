@@ -98,13 +98,13 @@ class PublicUserApiTests(TestCase):
 
 class PrivateUserApiTests(TestCase):
     def setUp(self):
-        self.user = create_user( # создаем нового!! (и сразу возращает поля)
+        self.user = create_user(
             email='test@example.com',
             password='testpass123',
             name='Test Name',
         )
         self.client = APIClient()
-        self.client.force_authenticate(user=self.user) # входим под ним
+        self.client.force_authenticate(user=self.user)
 
     def test_retrieve_profile_success(self):
         res = self.client.get(ME_URL)
