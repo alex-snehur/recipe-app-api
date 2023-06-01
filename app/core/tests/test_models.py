@@ -49,7 +49,7 @@ class ModelTests(TestCase):
             user=user,
             title='Sample recipe name',
             time_minutes=5,
-            price=Decimal('5.50'), # хранение float чисел (Decimal аккуратное в БД)
+            price=Decimal('5.50'),
             description='Sample recipe description.',
         )
         self.assertEqual(str(recipe), recipe.title)
