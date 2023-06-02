@@ -29,6 +29,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
         return serializer.save(user=self.request.user)
 
 class TagViewSet(
+    mixins.UpdateModelMixin,
     mixins.ListModelMixin, 
     viewsets.GenericViewSet):
     serializer_class = serializers.TagSerializer
